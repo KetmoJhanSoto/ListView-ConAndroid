@@ -41,15 +41,15 @@ public class ContactoAdaptador extends ArrayAdapter<Contacto> {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.contacto_item, null);
             holder = new ViewHolder();
-            holder.image = (NetworkImageView)convertView.findViewById(R.id.image);
-            holder.phone = (TextView) convertView.findViewById(R.id.phone);
-            holder.nickname = (TextView) convertView.findViewById(R.id.nickname);
+            holder.image = (NetworkImageView)convertView.findViewById(R.id.imagen);
+            holder.phone = (TextView) convertView.findViewById(R.id.telefono);
+            holder.nickname = (TextView) convertView.findViewById(R.id.nombre);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.phone.setText(rowItem.phone);
-        holder.nickname.setText(rowItem.nickname);
+        holder.phone.setText(rowItem.Telefono);
+        holder.nickname.setText(rowItem.Nombre);
         if ( rowItem.getSmallImage() != null ) { //<----- El modelo debe poseer esta function
             holder.image.setImageUrl(rowItem.getSmallImage(), queue);
         }
